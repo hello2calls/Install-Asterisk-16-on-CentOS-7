@@ -60,5 +60,18 @@ chown -R asterisk.asterisk /etc/asterisk
 chown -R asterisk.asterisk /var/{lib,log,spool}/asterisk
 chown -R asterisk.asterisk /usr/lib64/asterisk
 
+cat <<EOF >/etc/sysconfig/asterisk
+AST_USER="asterisk"
+AST_GROUP="asterisk"
+COLOR=yes
+#ALTCONF=/etc/asterisk/asterisk.conf
+#COREDUMP=yes
+#MAXLOAD=4
+#MAXCALLS=1000
+#VERBOSITY=3
+#INTERNALTIMING=yes
+#TEMPRECORDINGLOCATION=yes
+EOF
+
 service asterisk start
 asterisk -rvv
