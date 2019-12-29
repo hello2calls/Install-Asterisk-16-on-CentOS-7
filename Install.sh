@@ -73,5 +73,8 @@ COLOR=yes
 #TEMPRECORDINGLOCATION=yes
 EOF
 
+sed -i "s/;runuser.*/runuser=asterisk/g" /etc/asterisk/asterisk.conf
+sed -i "s/;rungroup.*/rungroup=asterisk/g" /etc/asterisk/asterisk.conf
+
 service asterisk start
 asterisk -rvv
